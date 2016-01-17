@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -e <%= @staging_file %> ]; then
+  apidir=$(tar -tzf <%= @staging_file %> | head -1)
+
+  if [ -d <%= @base_perforce_dir %>/${apidir} ]; then
+    ln -s <%= @base_perforce_dir %>/${apidir} <%= @base_perforce_dir %>/<%= @symlink_name %>
+    chown -R <%= @osuser %>:<%= @osgroup %> <%= @base_perforce_dir %>/${apidir}
+  fi
+else
+  exit 1
+fi
