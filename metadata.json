@@ -1,6 +1,6 @@
 {
   "name": "alanpetersen-p4api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "alanpetersen",
   "summary": "Manages the Perforce API installation on a node",
   "license": "Apache-2.0",
