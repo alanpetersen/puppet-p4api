@@ -12,14 +12,14 @@ class p4api::params {
     'Linux': {
       $osuser = 'root'
       $osgroup = 'root'
-      if $::kernelmajversion in ['2.6','3.16'] {
+      if $::kernelmajversion in ['2.6','3.13','3.16'] {
         if $::architecture in ['x86_64','amd64'] {
           $dist_dir = 'bin.linux26x86_64'
         } else {
           $dist_dir = 'bin.linux26x86'
         }
       } else {
-        fail("${::kernelmajversion} is not currently supported")
+        fail("Kernel version ${::kernelmajversion} is not currently supported")
       }
     }
     default: {
